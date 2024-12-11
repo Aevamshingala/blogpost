@@ -6,7 +6,7 @@ const app = express();
 const dirName = path.resolve();
 app.use(
   cors({
-    origin: "https://blogpost-1-4tk5.onrender.com",
+    origin: "https://blogpost-1-4tk5.onrender.com/",
     credentials: true,
   })
 );
