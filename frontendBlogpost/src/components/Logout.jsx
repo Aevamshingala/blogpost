@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { logout } from "../authServices/authslice.js";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import { url } from "../const.js";
 function Logout() {
   const [error, setError] = useState();
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ function Logout() {
   let timeOut;
   const handleLogout = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/v1/user/logout`, {
+      const response = await fetch(`${url}v1/user/logout`, {
         method: "POST",
         credentials: "include",
       });

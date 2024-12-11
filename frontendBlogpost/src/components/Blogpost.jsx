@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { GetUser } from "./getUser";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
+import { url } from "../const";
 function Blogpost() {
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
@@ -23,7 +23,7 @@ function Blogpost() {
       message,
     };
     try {
-      const response = await fetch(`http://localhost:3000/v1/blog/setblog`, {
+      const response = await fetch(`${url}v1/blog/setblog`, {
         method: "POST",
         credentials: "include",
         headers: {

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../authServices/authslice.js";
-
+import { url } from "../const.js";
 function Firstpage() {
   const navigate = useNavigate();
   const [user, setUser] = useState("");
@@ -12,13 +12,10 @@ function Firstpage() {
 
   const handleClick = async () => {
     //check user exist
-    const responce = await fetch(
-      `http://localhost:3000/v1/user/getcurrentuser`,
-      {
-        method: "POST",
-        credentials: "include",
-      }
-    );
+    const responce = await fetch(`${url}v1/user/getcurrentuser`, {
+      method: "POST",
+      credentials: "include",
+    });
     const result = await responce.json();
     if (!responce.ok) {
       navigate("/register");

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { nanoid } from "nanoid";
 import { useNavigate } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
-
+import { url } from "../const.js";
 function GetAllBlog() {
   const fetchUser = GetUser();
 
@@ -96,7 +96,7 @@ function GetAllBlog() {
 
 export default GetAllBlog;
 export const getAlldata = async () => {
-  const response = await fetch(`http://localhost:3000/v1/blog/getallblog`, {
+  const response = await fetch(`${url}v1/blog/getallblog`, {
     method: "POST",
     credentials: "include",
   });

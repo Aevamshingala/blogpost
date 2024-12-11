@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GetUser } from "./getUser.jsx";
 import { useEffect } from "react";
 import { nanoid } from "nanoid";
+import { url } from "../const.js";
 
 function MyBlog() {
   const fetchUser = GetUser();
@@ -11,7 +12,7 @@ function MyBlog() {
 
   const getdata = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/v1/blog/myblog`, {
+      const response = await fetch(`${url}v1/blog/myblog`, {
         method: "POST",
         credentials: "include",
       });

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../authServices/authslice.js";
 import { useNavigate } from "react-router-dom";
-
+import { url } from "../const.js";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,7 +19,7 @@ function Login() {
       password,
     };
     try {
-      const response = await fetch(`http://localhost:3000/v1/user/login`, {
+      const response = await fetch(`${url}v1/user/login`, {
         method: "POST",
         credentials: "include",
         headers: {

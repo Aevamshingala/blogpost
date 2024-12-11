@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { url } from "../const";
 
 function Register() {
   const [userName, setuserName] = useState("");
@@ -16,7 +17,7 @@ function Register() {
 
     const data = { userName, email, password };
     try {
-      const response = await fetch(`http://localhost:3000/v1/user/register`, {
+      const response = await fetch(`${url}v1/user/register`, {
         method: "POST",
         credentials: "include",
         headers: {
