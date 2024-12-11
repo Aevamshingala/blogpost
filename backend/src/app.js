@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import path from "path";
 const app = express();
-
+const dirName = path.resolve();
 app.use(
   cors({
     origin: "http://localhost:5173",
@@ -33,4 +34,8 @@ app.use((err, req, res, next) => {
   });
 });
 
+app.use(express.static(path.join(dirName, "/frontendBlogpost/dist")));
+app.get("*", (_, res) => {
+  res.sendFile(path.resolve(dirName, "frontendBlogpost", "dist", "index.html"));
+});
 export default app;

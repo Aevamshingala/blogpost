@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+    "dev": "nodemon -r backend/src/index.js",
+    "build": "npm install && npm install --prefix frontendBlogpost && npm run build --prefix frontendBlogpost",
+    "start": "nodemon  backend/src/index.js"
   },
   "author": "",
   "license": "ISC",
