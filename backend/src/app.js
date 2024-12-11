@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://blogpost-frontend-ga4n.onrender.com",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
