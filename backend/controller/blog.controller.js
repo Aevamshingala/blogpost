@@ -8,7 +8,7 @@ const setBlog = async (req, res, next) => {
   try {
     if (!title) throw new Apierror(401, "title not found", false);
     if (!message) throw new Apierror(401, "message not found", false);
-    console.log(title, message);
+
     const user = await req.user;
     if (!user) {
       throw new Apierror(400, "user is not found in blogpost", false);

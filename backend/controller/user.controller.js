@@ -6,11 +6,9 @@ import { User } from "../model/register.js";
 const generateAccessandRefreshToken = async (userId) => {
   try {
     const user = await User.findById(userId);
-    console.log(user);
 
     const accessToken = user.generateAccessToken();
     const refreshToken = user.generateRefreshToken();
-    console.log(accessToken);
 
     user.refreshToken = refreshToken;
     await user.save({ validateBeforeSave: false });
@@ -26,7 +24,6 @@ const generateAccessandRefreshToken = async (userId) => {
 const registerUser = async (req, res, next) => {
   try {
     const { userName, password, email } = req.body;
-    console.log(email, userName, password);
 
     // Email validation
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -67,16 +64,12 @@ const Login = async (req, res, next) => {
     if (!existUser) {
       throw new Apierror(404, "user does not exist", false);
     }
-    console.log(existUser);
-
-    console.log(password);
 
     const isPasswordValid = await existUser.isPasswordCorrect(password);
 
     if (!isPasswordValid) {
       throw new Apierror(401, "password is not correct", false);
     }
-    console.log(existUser._id);
 
     const { accessToken, refreshToken } = await generateAccessandRefreshToken(
       existUser?._id
@@ -107,10 +100,7 @@ const changepassword = async (req, res, next) => {
     const { email, password, newpassword } = req.body;
 
     const user = await User.findOne({ email });
-    console.log(user);
 
-    console.log(password);
-    console.log(user.password);
     const isPasswordValid = await user.isPasswordCorrect(password);
     if (!isPasswordValid) {
       throw new Apierror(400, "your password is wrong");
