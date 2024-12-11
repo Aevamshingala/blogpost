@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://blogpost-frontend-ukeq.onrender.com",
+    origin: "https://blogpost-frontend-ga4n.onrender.com",
     credentials: true,
   })
 );
