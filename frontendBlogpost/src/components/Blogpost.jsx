@@ -32,7 +32,6 @@ function Blogpost() {
         body: JSON.stringify(data),
       });
       const result = await response.json();
-      console.log(result);
 
       if (!response.ok) {
         setError(result.message);

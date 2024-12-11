@@ -27,7 +27,6 @@ function Register() {
       });
 
       const result = await response.json();
-      console.log(result);
 
       if (!response.ok) {
         // If response is not ok, display the error message from the backend
