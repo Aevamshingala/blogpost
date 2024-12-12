@@ -81,6 +81,7 @@ const Login = async (req, res, next) => {
     const options = {
       httpOnly: true,
       secure:true, // Secure only for production
+      SameSite:true
     };
 
     return res
@@ -137,6 +138,7 @@ const logOut = async (req, res, next) => {
     const options = {
       httpOnly: true,
       secure: true , // Secure only for production
+      SameSite:true
     };
 
     return res
