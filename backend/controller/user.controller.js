@@ -80,7 +80,7 @@ const Login = async (req, res, next) => {
     );
     const options = {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // Secure only for production
+      secure:true, // Secure only for production
     };
 
     return res
@@ -136,7 +136,7 @@ const logOut = async (req, res, next) => {
 
     const options = {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production", // Secure only for production
+      secure: true , // Secure only for production
     };
 
     return res
