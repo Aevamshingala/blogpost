@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon -r backend/src/index.js",
     "build": "npm install && npm install --prefix frontendBlogpost && npm run build --prefix frontendBlogpost",
-    "start": "nodemon -r backend/src/index.js"
+    "start": "nodemon backend/src/index.js"
   },
   "author": "",
   "license": "ISC",
