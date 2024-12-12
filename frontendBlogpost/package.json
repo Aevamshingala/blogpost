@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npm install && npm install --prefix frontendBlogpost && npm run build --prefix frontendBlogpost",
     "lint": "eslint .",
     "preview": "vite preview"
   },
