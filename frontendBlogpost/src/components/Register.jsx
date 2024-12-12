@@ -14,7 +14,7 @@ function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    setuserName = userName.trim();
     const data = { userName, email, password };
     try {
       const response = await fetch(`${url}v1/user/register`, {
