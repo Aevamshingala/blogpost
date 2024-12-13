@@ -1,7 +1,12 @@
-import React from "react";
-import { Redirect } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 function NotFound() {
-  return <Redirect to="/" />;
+  let navigate = useNavigate();
+  useEffect(() => {
+    navigate("/");
+  }, [navigate]);
+  return null;
 }
 
 export default NotFound;
