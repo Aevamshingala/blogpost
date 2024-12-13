@@ -16,8 +16,7 @@ import Firstpage from "./components/Firstpage.jsx";
 import { Provider } from "react-redux";
 import store from "../src/authServices/store.js";
 import GetAllBlog, { getAlldata } from "./components/GetAllBlog.jsx";
-import { NotFound } from "../components/NotFound.jsx";
-
+import { NotFound } from "./components/NotFound.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
