@@ -80,8 +80,8 @@ const Login = async (req, res, next) => {
     );
     const options = {
       httpOnly: true,
-      secure:true, // Secure only for production
-      SameSite:true
+      secure: true, // Secure only for production
+      maxAge: 24 * 60 * 60 * 1000,
     };
 
     return res
